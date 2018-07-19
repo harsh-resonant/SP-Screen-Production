@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Project__c.Installation_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ASSIGNED</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Rockford</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Not Started</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.Installation_Date__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Activites with Projects</name>
+    <params>
+        <name>closed</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ActivityCustomEntity$Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

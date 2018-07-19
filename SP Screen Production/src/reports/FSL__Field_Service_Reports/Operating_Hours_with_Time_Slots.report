@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OperatingHours.TimeSlots$Name</field>
+    </columns>
+    <columns>
+        <field>OperatingHours.TimeSlots$DayOfWeek</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OperatingHours$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Operating Hours with Time Slots</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Op_Hours__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OperatingHours$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

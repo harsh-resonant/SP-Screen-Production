@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_15045170</developerName>
+        <masterLabel>Installations &amp; CM</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>SUBJECT</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Check_Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD: CWS Book Check-Measure / enter date</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Syd Inhouse: Book Check-Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebook CM, Customer wasnt there when Tony turned up</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book Check_Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book Check Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCN Inhouse: Book Check-Measure/ has it been completed? Mark off.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCN ROCKF: (01) Book Check_Measure or mark off if completed on quoting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Check Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD CWS: (01) Book Check-Measure / enter date</sourceValue>
+            </sourceValues>
+            <value>CM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SYD: CWS Book Customer Install (if not other product ordered)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Customer Install via installation WO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD Inhouse: Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>rework</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebook rework, customer had to cancel from 10/11</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Possible warranty?  Roll down not clipping at the bottom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>REBOOK INSTALL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BOOK REWORK</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book re-installation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Book Customer to install REWORK</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCN ROCKF: (06) Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD CWS: (05) Book Customer Install (if not other product ordered)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD Inhouse: (06) Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>COFFS ROCKFORD: (07) Book Customer Install via Install WO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK: (08) Book Customer Install via installation WO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK: (11) Book Customer Install via installation WO</sourceValue>
+            </sourceValues>
+            <value>INSTALLATION</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <columns>
+        <field>FULL_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>CREATED_BY</field>
+    </columns>
+    <description>New Installations that need ACTION for the first time</description>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CM,Check_measure,check measure,installation,book customer install,book rework,warranty</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_DESCRIPTION</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_15045170</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>New Installations to Book</name>
+    <params>
+        <name>closed</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>t</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>DUE_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
